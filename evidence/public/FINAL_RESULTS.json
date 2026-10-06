@@ -1,0 +1,37 @@
+{
+  "status": "FUNCTIONAL_IMPLEMENTATION_COMPLETE",
+  "paper_doi": "10.1109/TDSC.2025.3617517",
+  "functional_validation": {
+    "phase1": "PASS",
+    "phase2": "PASS",
+    "phase3_session1": "PASS",
+    "phase3_session2_without_reregistration": "PASS",
+    "state_rotation": "PASS",
+    "fresh_session_keys": "PASS",
+    "onchain_revocation": "PASS",
+    "session3_after_revocation": "PASS_REJECTED_AS_EXPECTED"
+  },
+  "session_key_fingerprints": {
+    "session1_sha256": "c1921fbf5888db250c1ac63908a72e2362a19b2bc99fca0eb570cef19528bef4",
+    "session2_sha256": "3d0ba378727b037c0dfbe57b5c9a62a2b96355e3123e5f2f20da25718398a1f6"
+  },
+  "solana": {
+    "network": "Devnet",
+    "program_id": "CiQyDY4MurDQJbHGZnLvVnP6BfdxKG9Fmu1GB2gPKrGQ",
+    "config_pda": "634Jmxo9J8DGNwGXw3HsYw9w3oobP3X2bJ7Eo8ECsxjv",
+    "smd_pda": "3M6AXXVAqQgTqoHNmpBdRRApvttym8jBaBwQwcAEGiDw"
+  },
+  "performance": {
+    "smd_synthetic_us": 4.986,
+    "nsp_crypto_synthetic_us": 461.721,
+    "solana_get_account_info_median_ms": 985.521,
+    "phase3_decoded_binary_bytes": 466,
+    "phase3_compact_json_bytes": 702,
+    "phase3_pretty_json_bytes": 732
+  },
+  "limitations": [
+    "PUF is simulated with HMAC-SHA256.",
+    "v1 transport uses manual JSON transfer.",
+    "Solana latency is public Devnet RPC round-trip latency."
+  ]
+}

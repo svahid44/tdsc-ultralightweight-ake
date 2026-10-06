@@ -1,0 +1,3 @@
+cryptography==50.0.2
+solana==0.41.0
+solders==0.29.0

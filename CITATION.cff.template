@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the source paper and this repository release."
+title: "TDSC Ultra-Lightweight Blockchain-Assisted AKE Implementation"
+version: 1.0.0
+date-released: YYYY-MM-DD
+authors:
+  - family-names: "<YOUR_FAMILY_NAME>"
+    given-names: "<YOUR_GIVEN_NAME>"
+repository-code: "https://github.com/<USER>/<REPO>"
+preferred-citation:
+  type: article
+  title: "Novel Ultra-Lightweight Leakage-Resilient Blockchain-Assisted Key Exchange Protocol for Resource-Constrained Smart Meters in Smart Grid"
+  authors:
+    - family-names: "Abbasinezhad-Mood"
+      given-names: "Dariush"
+  journal: "IEEE Transactions on Dependable and Secure Computing"
+  year: 2026
+  doi: "10.1109/TDSC.2025.3617517"

@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets / private keys
+*.pem
+*.key
+*.seed
+*.secret
+*.wallet
+.env
+.env.*
+**/*private*
+**/*secret*
+**/puf_secret.key
+**/sk_tuc.key
+**/sk_smd.pem
+**/sk_nsp.pem
+**/wallet*.json
+**/solana*.json
+
+# Runtime protocol state
+**/data/
+**/import/
+**/export/
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
+# Local evidence bundles
+evidence/private/
+evidence/incoming/
+evidence/TDSC_IMPLEMENTATION_EVIDENCE/
+evidence/*.tar.gz
+evidence/*.tar.gz.sha256
+
+# Anchor / Rust / JS build
+target/
+.anchor/
+test-ledger/
+node_modules/
+
+# Temporary
+*.tmp
+*.bak
+*.swp
+!scripts/audit_secrets.py

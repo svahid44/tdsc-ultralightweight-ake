@@ -1,0 +1,124 @@
+{
+  "project": "Implementation of Novel Ultra-Lightweight Leakage-Resilient Blockchain-Assisted Key Exchange Protocol",
+  "paper_doi": "10.1109/TDSC.2025.3617517",
+  "captured_at_utc": "2026-10-06T15:28:02.624785+00:00",
+  "implementation_status": "FUNCTIONAL_IMPLEMENTATION_COMPLETE",
+  "functional_validation": {
+    "phase0_setup": "PASS",
+    "phase1_tuc_initialization": "PASS",
+    "phase2_registration": "PASS",
+    "phase3_session1": "PASS",
+    "phase3_session2_without_reregistration": "PASS",
+    "state_rotation": "PASS",
+    "fresh_session_keys": "PASS",
+    "old_rid_deletion": "PASS",
+    "onchain_revocation": "PASS",
+    "phase3_session3_after_revocation": "PASS_REJECTED_AS_EXPECTED"
+  },
+  "blockchain": {
+    "network": "Solana Devnet",
+    "program_id": "CiQyDY4MurDQJbHGZnLvVnP6BfdxKG9Fmu1GB2gPKrGQ",
+    "config_pda": "634Jmxo9J8DGNwGXw3HsYw9w3oobP3X2bJ7Eo8ECsxjv",
+    "smd_pda": "3M6AXXVAqQgTqoHNmpBdRRApvttym8jBaBwQwcAEGiDw",
+    "transactions": {
+      "config_init": "yyTyrZ5vL232T9eQ6JkrMJLDZpunw13pQsrf32Xdf4Q5ZKTBpriVrzcU32DAiX1aDDfvkU8FPC9NzgRs1X1BbNq",
+      "smd_insert": "2TWoNEERAHVWLWozRB6srXbFLXfXNMJx6V3A2ymzynQG128udD8VfL8JwcRdosqNSVSAbvztF9h2UNnHnzL9BXmo",
+      "smd_revoke": "TSqMHRf3YypAiQrQ6xWLyEHrxYvV27qeJXQiYgNWqr7BKMkHk2fYWCBFqZjx2KtCKep7a7BgjvKsczTpaX2w6V3"
+    },
+    "revocation": {
+      "rs_before": 0,
+      "rs_after": 1,
+      "session3_result": "RuntimeError: SMD is revoked"
+    }
+  },
+  "session_key_fingerprints": {
+    "session1_sha256": "c1921fbf5888db250c1ac63908a72e2362a19b2bc99fca0eb570cef19528bef4",
+    "session2_sha256": "3d0ba378727b037c0dfbe57b5c9a62a2b96355e3123e5f2f20da25718398a1f6",
+    "session1_equals_session2": false,
+    "smd_nsp_match_session1": true,
+    "smd_nsp_match_session2": true
+  },
+  "performance": {
+    "smd_synthetic_local_us": 4.986,
+    "nsp_crypto_synthetic_local_us": 461.721,
+    "solana_get_account_info_median_ms": 985.521,
+    "approx_nsp_crypto_plus_rpc_ms": 985.983,
+    "phase3_communication": {
+      "decoded_binary_bytes": 466,
+      "compact_json_bytes": 702,
+      "pretty_json_bytes": 732
+    },
+    "paper_reference": {
+      "smd_us": 531,
+      "nsp_crypto_us": 150,
+      "solana_query_us": 266,
+      "reported_total_ms": 0.95,
+      "phase3_communication_bytes": 136
+    }
+  },
+  "architecture": {
+    "tuc": {
+      "captured_at_utc": "2026-10-05T15:49:45.536268+00:00",
+      "role": "TUC",
+      "hostname": "user-NUC15CRKU5",
+      "python": "3.14.4",
+      "platform": "Linux-7.0.0-14-generic-x86_64-with-glibc2.43",
+      "openssl": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)"
+    },
+    "nsp": {
+      "captured_at_utc": "2026-10-05T15:44:02.827664+00:00",
+      "role": "NSP",
+      "hostname": "t3protocol-t4pro",
+      "python": "3.12.3",
+      "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+      "openssl": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)"
+    },
+    "smd": {
+      "captured_at_utc": "2026-10-05T15:38:54.236085+00:00",
+      "role": "SMD",
+      "hostname": "user-NUC15CRKU5",
+      "python": "3.14.4",
+      "platform": "Linux-7.0.0-14-generic-x86_64-with-glibc2.43",
+      "openssl": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)"
+    },
+    "transport_used_in_experiment": "manual transfer of JSON ciphertext messages"
+  },
+  "implementation_choices": {
+    "hash": "SHA-256",
+    "symmetric_encryption": "AES-256-GCM",
+    "elliptic_curve": "NIST P-256 / secp256r1",
+    "aenc": "ECIES-like construction using ephemeral P-256 ECDH + HKDF-SHA256 + AES-256-GCM",
+    "puf": "HMAC-SHA256 simulated PUF",
+    "nsp_database": "SQLite"
+  },
+  "limitations": [
+    "PUF is simulated; no physical-PUF unclonability or physical leakage-resilience experiment was performed.",
+    "Inter-node transport was manual JSON transfer rather than an automated network API.",
+    "Public Solana Devnet RPC latency is network-dependent.",
+    "NSP P-256 multiplication benchmark uses ECDH as an OpenSSL-backed proxy.",
+    "NSP point-add benchmark uses Python affine arithmetic and is not an optimized OpenSSL point-add measurement."
+  ],
+  "node_evidence_integrity": {
+    "TUC": {
+      "archive_filename": "tdsc_tuc_evidence.tar.gz",
+      "archive_sha256": "af02cdde587d7dacd95a29756c5210b37bf1bb3a280a6d3ca63dc43c1c406b3d",
+      "checked_files": 9,
+      "ok": true,
+      "failures": []
+    },
+    "SMD": {
+      "archive_filename": "tdsc_smd_evidence.tar.gz",
+      "archive_sha256": "2b3a31ce6962b4acf18f97665bb6b692264b9f4a12e5af681decc35e4e09722f",
+      "checked_files": 10,
+      "ok": true,
+      "failures": []
+    },
+    "NSP": {
+      "archive_filename": "tdsc_nsp_evidence.tar.gz",
+      "archive_sha256": "2620b49d291d132c0609b99c41fc4c3d65003ac854b29cf9d2f546c1a0e53886",
+      "checked_files": 21,
+      "ok": true,
+      "failures": []
+    }
+  }
+}

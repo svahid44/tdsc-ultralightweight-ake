@@ -1,0 +1,23 @@
+{
+  "TUC": {
+    "archive_filename": "tdsc_tuc_evidence.tar.gz",
+    "archive_sha256": "af02cdde587d7dacd95a29756c5210b37bf1bb3a280a6d3ca63dc43c1c406b3d",
+    "checked_files": 9,
+    "ok": true,
+    "failures": []
+  },
+  "SMD": {
+    "archive_filename": "tdsc_smd_evidence.tar.gz",
+    "archive_sha256": "2b3a31ce6962b4acf18f97665bb6b692264b9f4a12e5af681decc35e4e09722f",
+    "checked_files": 10,
+    "ok": true,
+    "failures": []
+  },
+  "NSP": {
+    "archive_filename": "tdsc_nsp_evidence.tar.gz",
+    "archive_sha256": "2620b49d291d132c0609b99c41fc4c3d65003ac854b29cf9d2f546c1a0e53886",
+    "checked_files": 21,
+    "ok": true,
+    "failures": []
+  }
+}
