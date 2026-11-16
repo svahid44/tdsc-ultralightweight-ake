@@ -21,3 +21,13 @@ The frozen experiment evidence remains independent of the publication-source has
 - Simulated HMAC-SHA256 PUF
 
 Automated transport and physical/hardware PUF integration are outside v1 scope.
+
+## November 2026 security-evaluation extension
+
+The original protocol's runtime code is unmodified in the published source archive.
+`v1.1.0` adds code used for authorized NSP-insider attack experiments, isolated
+SMD retry generators, an optional NSP observer/installer, the independent
+Attacker test role, and public summaries of outcomes reported by the operator.
+See [`attacks/PC_ATTACKS.md`](attacks/PC_ATTACKS.md) for the exact distinction
+between real offline key recovery and untested live retry acceptance.
+The original snapshot manifest is preserved as `SOURCE_MANIFEST.v1.sha256`.

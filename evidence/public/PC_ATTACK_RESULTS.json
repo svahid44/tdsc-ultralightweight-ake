@@ -1,0 +1,43 @@
+{
+  "title": "PC NSP-insider offline key-recovery experiments",
+  "report_date": "2026-11-16",
+  "baseline": "original v1.0.0 cryptographic protocol; no improved protocol",
+  "key_public_sha256_prefix": "e19a731464ffb8ee57bb",
+  "evidence_provenance": "NSP host laboratory terminal records dated 2026-11-16; raw logs retained separately; public summaries only",
+  "threat_model": "honest-but-curious NSP with legitimate decryption and local enrolled state",
+  "attacks": [
+    {
+      "id": "attack1",
+      "input": "archived genuine phase2+phase3 requests",
+      "offline_nsp_key_recovery": "PASS",
+      "requires_smd_private_key_file": false,
+      "live_acceptance_tested": false,
+      "original_private_evidence_sha256_reported": "6252a9abb58496aba3d8115f9f62ffab8f7a761304bfa1b5f73decb5add98e21"
+    },
+    {
+      "id": "attack2",
+      "input": "two genuine SMD-generated encrypted phase2 requests",
+      "offline_nsp_key_recovery": "PASS",
+      "requires_smd_private_key_file": false,
+      "live_acceptance_tested": false,
+      "timestamp_freshness_tested": false,
+      "original_private_evidence_sha256_reported": "60168641eb5e4794226eb85905aaab4d329868bf1e8e5d9478f5d8c02fa27b3f"
+    },
+    {
+      "id": "attack3",
+      "input": "two genuine SMD-generated encrypted phase3 requests",
+      "offline_nsp_key_recovery": "PASS",
+      "requires_smd_private_key_file": false,
+      "live_acceptance_tested": false,
+      "original_private_evidence_sha256_reported": "c85ff0e2c0661b261de6fac0d5f366be47dcc792babb879be555e8bf9060f79b"
+    }
+  ],
+  "attacker_node_stage1": "Synthetic self-tests passed; separate Attacker role not used in the three NSP-insider experiments",
+  "excluded_material": "SMD/NSP/TUC private keys, plaintext observations, bundle tarballs, raw local evidence logs",
+  "limitations": [
+    "offline insider only",
+    "no claim of live retry acceptance or current revocation checks",
+    "no claim of passive-wiretap success",
+    "not an independent proof of PFS or KCI break"
+  ]
+}
