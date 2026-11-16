@@ -38,3 +38,23 @@ Only report pass/fail lines and the *public key* fingerprint. The output never
 prints or saves recovered private scalars. A pass supports the NSP-insider
 key-recovery experiment for two archived SMD messages, **not** live acceptance,
 revocation state, or success for a passive network observer.
+
+## SMD-side retry-request generation
+
+The SMD retry-request generator is available at
+`smd/src/phase3_retry_lab.py`.
+
+On a configured SMD host, execute
+`python3 smd/src/phase3_retry_lab.py --attempts 3`.
+
+The generator creates independent Phase 3 authentication
+requests using the existing SMD registration and session
+materials. The generated requests are stored locally
+and are not submitted to the NSP.
+
+Two requests from the same run can be used for offline
+key-recovery analysis by an NSP possessing the matching
+archived registration and session information.
+
+This experiment demonstrates offline private-key recovery;
+it does not establish live acceptance of repeated requests.
