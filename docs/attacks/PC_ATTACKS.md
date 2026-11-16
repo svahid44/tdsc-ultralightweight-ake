@@ -1,7 +1,7 @@
 # PC Security Evaluation — Original Protocol, NSP Insider
 
-**Repository addendum:** PC proof-of-concept experiments completed on 16 November 2026.  
-**Baseline:** original three-node implementation, unchanged cryptographic protocol.  
+**Repository addendum:** PC proof-of-concept experiments completed on 16 November 2026.
+**Baseline:** original three-node implementation, unchanged cryptographic protocol.
 **Scope:** local, authorized academic evaluation of the researchers' SMD/NSP/TUC instances.
 
 ## Roles and deployment
